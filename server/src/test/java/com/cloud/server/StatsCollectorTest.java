@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.TreeMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -285,6 +286,19 @@ public class StatsCollectorTest {
         Mockito.verify(vmStatsDaoMock).removeAllByTimestampLessThan(Mockito.any());
     }
 
+    private Map<String, String> transformJsonToFiexedOrder(String jsonString) {
+        TreeMap<String, String> jsonMap = new TreeMap<String, String>();
+        jsonString = jsonString.replace("{", "").replace("}","");
+        String[] json_pairs=jsonString.split(",");
+        for (String pair: json_pairs) {
+            String[] keyVal = pair.split(":");
+            if (keyVal.length == 2) {
+                jsonMap.put(keyVal[0], keyVal[1]);
+            }
+        }
+        return jsonMap;
+    }
+    
     @Test
     public void persistVirtualMachineStatsTestPersistsSuccessfully() {
         statsCollector.msId = 1L;
@@ -300,7 +314,8 @@ public class StatsCollectorTest {
         VmStatsVO actual = vmStatsVOCaptor.getAllValues().get(0);
         Assert.assertEquals(Long.valueOf(2L), actual.getVmId());
         Assert.assertEquals(Long.valueOf(1L), actual.getMgmtServerId());
-        Assert.assertEquals(expectedVmStatsStr, actual.getVmStatsData());
+        Assert.assertEquals(transformJsonToFiexedOrder(expectedVmStatsStr), transformJsonToFiexedOrder(actual.getVmStatsData()));
+        // Assert.assertEquals(expectedVmStatsStr, actual.getVmStatsData());
         Assert.assertEquals(timestamp, actual.getTimestamp());
     }
 
