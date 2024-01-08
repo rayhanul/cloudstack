@@ -1,0 +1,18 @@
+# Created at 2024-01-07T23:55:06.903
+OpenJDK 64-Bit Server VM warning: Ignoring option MaxPermSize; support was removed in 8.0
+
+# Created at 2024-01-07T23:55:08.349
+WARNING: An illegal reflective access operation has occurred
+
+# Created at 2024-01-07T23:55:08.349
+WARNING: Illegal reflective access by org.powermock.reflect.internal.WhiteboxImpl (file:/home/rayhanul/.m2/repository/org/powermock/powermock-reflect/2.0.5/powermock-reflect-2.0.5.jar) to method java.lang.Object.registerNatives()
+
+# Created at 2024-01-07T23:55:08.349
+WARNING: Please consider reporting this to the maintainers of org.powermock.reflect.internal.WhiteboxImpl
+
+# Created at 2024-01-07T23:55:08.349
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+
+# Created at 2024-01-07T23:55:08.350
+WARNING: All illegal access operations will be denied in a future release
+

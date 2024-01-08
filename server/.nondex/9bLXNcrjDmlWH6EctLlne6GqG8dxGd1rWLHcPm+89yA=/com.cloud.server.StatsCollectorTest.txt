@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.cloud.server.StatsCollectorTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.742 s <<< FAILURE! - in com.cloud.server.StatsCollectorTest
+persistVirtualMachineStatsTestPersistsSuccessfully(com.cloud.server.StatsCollectorTest)  Time elapsed: 1.74 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<{"[vmId":2,"cpuUtilization":6.0,"networkReadKBs":7.0,"networkWriteKBs":8.0,"diskReadIOs":12.0,"diskWriteIOs":13.0,"diskReadKBs":10.0,"diskWriteKBs":11.0,"memoryKBs":3.0,"intFreeMemoryKBs":4.0,"targetMemoryKBs":5.0,"numCPUs":9,"entityType":"vm"]}> but was:<{"[diskWriteKBs":11.0,"cpuUtilization":6.0,"diskWriteIOs":13.0,"memoryKBs":3.0,"diskReadKBs":10.0,"entityType":"vm","diskReadIOs":12.0,"vmId":2,"numCPUs":9,"networkWriteKBs":8.0,"intFreeMemoryKBs":4.0,"targetMemoryKBs":5.0,"networkReadKBs":7.0]}>
+	at com.cloud.server.StatsCollectorTest.persistVirtualMachineStatsTestPersistsSuccessfully(StatsCollectorTest.java:303)
+
